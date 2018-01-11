@@ -1,0 +1,16 @@
+# Middleman example website
+
+Test app
+
+## Usage
+
+```
+# install dependencies
+bundle install
+#start local server
+middleman server
+```
+
+Open  localhost:4567
+
+## Website preview
