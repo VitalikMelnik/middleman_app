@@ -7,17 +7,22 @@
     %title= data.page.title || "Живасофт"
     %meta{:content => data.page.description || "SET YOUR SITE DESCRIPTION", :name => "description"}
     %meta{:content => "width=device-width", :name => "viewport"}
+    %script{:src => "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"}
     = javascript_include_tag "site"
     = stylesheet_link_tag :main
 
   %body
 
-  %img.double-image{alt: "7", src: "../images/fon.png"}
-  %img.seven{alt: "7", src: "../images/fon2.png"}
-  =partial "/partials/navigation"
+  %div.gol-div
+    %div.redl
+    %div.first
+      %div.content{:role => "main", :class => "main"}= yield
+    %div.second
 
-  %div.content{:role => "main", :class => "main"}= yield
+    =partial "/partials/navigation"
 
   %div.img-line
 
   =partial "/partials/footer"
+
+  %div#fot

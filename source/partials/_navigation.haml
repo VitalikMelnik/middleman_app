@@ -1,10 +1,44 @@
-%div.nav
+%header#site-header.header
 
-  %img.logo{:src => "/images/logo.png"}
 
-  %header.main-navigation
-    = link_to "Презентация", "/prezent.html", class: "main-navigation__item"
-    = link_to "Команда", "/team.html", class: "main-navigation__item"
-    = link_to "Для кого", "/for_whome.html", class: "main-navigation__item"
-    = link_to "Решения", "/decision.html", class: "main-navigation__item"
-    = link_to "Живасофт", "/", class: "main-navigation__item nav-home"
+  .site-branding
+    %img.img-icon{:alt => "альтернативный текст", :src => "../images/logo.png"}/
+    %h1
+      %a{:href => "/"} Живасофт
+
+
+
+  %nav.main-navigation
+    %label.icon{:for => "toggle"}
+      %span.ham
+    %input#toggle{:type => "checkbox"}/
+    %ul.menu
+      %li
+        %a{:href => "decision.html"}
+          Решения
+          %i
+      %li
+        %a{:href => "/for_whome.html"}
+          Для кого
+          %i
+      %li
+        %a{:href => "/team.html"}
+          Команда
+          %i
+      %li
+        %a.nav-last{:href => "/prezent.html"}
+          Презентация
+          %i
+  .header-search
+    %i.fa.fa-search
+
+
+
+
+
+
+
+
+
+
+

@@ -45,3 +45,15 @@ page '/*.txt', layout: false
 #   activate :minify_javascript
 # end
 
+# Set this to the root of your project when deployed:
+http_path = "/"
+css_dir = "sourse/stylesheets"
+scss_dir = "sourse/stylesheets/scss"
+images_dir = "sourse/images"
+javascripts_dir = "sourse/javascript"
+fonts_dir = "sourse/fonts"
+
+output_style = :nested
+environment = :development
+
+relative_assets = true
