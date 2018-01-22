@@ -12,7 +12,8 @@ body {
   border: 0px; }
 
 .slide {
-  height: 4000px; }
+  height: 4000px;
+  text-align: center; }
 
 .gol-div {
   background: url("../images/fon.png") no-repeat right top;
@@ -50,13 +51,14 @@ body {
   width: 500px;
   height: 500px;
   margin-left: 50%;
-  transition: transform 0.5s linear;
+  transition: width 0.5s linear;
   transform-origin: top left;
   transform-style: preserve-3D;
+  transform: rotate(45deg);
   border-top: #ff3d00 solid 8px; }
 
 .redl:hover {
-  transform: rotate(45deg); }
+  width: 700px; }
 
 .content {
   width: 50%;
@@ -68,7 +70,9 @@ body {
     font-size: 60px;
     color: #999999; }
   .content .context-text {
-    font-size: 22px; }
+    font-size: 22px;
+    margin: 0px;
+    margin-top: -20px; }
   .content .red-line {
     height: 30px;
     border-top: #ff3d00 solid 5px;
@@ -82,11 +86,8 @@ body {
 .demo a {
   height: 60px;
   width: 60px;
+  margin-top: -80px;
   background-color: #ff3d00;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  z-index: 2;
   display: inline-block;
   -webkit-transform: translate(0, -50%);
   transform: translate(45, -50%);
@@ -96,7 +97,7 @@ body {
 .demo a:hover {
   opacity: .5; }
 
-#section07 a span {
+#mainScroll a span {
   position: absolute;
   top: 0;
   left: 50%;
@@ -112,16 +113,27 @@ body {
   animation: sdb07 2s infinite;
   opacity: 0;
   box-sizing: border-box; }
+  #mainScroll a span .end-span {
+    margin-top: 8px;
+    margin-left: -22px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 0px solid #fff;
+    border-bottom: 0px solid #fff; }
 
-#section07 a span:nth-of-type(1) {
+#mainScroll a span:nth-of-type(1) {
   -webkit-animation-delay: 0s;
   animation-delay: 0s; }
 
-#section07 a span:nth-of-type(2) {
+#mainScroll a span:nth-of-type(2) {
   top: 8px;
   margin-left: -16px;
   -webkit-animation-delay: .15s;
   animation-delay: .15s; }
+
+#mainScroll a span:last-child {
+  -webkit-animation-delay: .30s;
+  animation-delay: .30s; }
 
 @-webkit-keyframes sdb07 {
   0% {
@@ -158,6 +170,8 @@ ul {
 .js-global-header-scrolling {
   top: -10em;
   /* Height of the header */ }
+  .js-global-header-scrolling .menu {
+    visibility: hidden; }
 
 .img-icon {
   float: left;
@@ -214,7 +228,7 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: 0.5s all ease; }
+    transition: 0.2s all ease; }
     .icon .ham:before, .icon .ham:after {
       content: '';
       width: 25px;
@@ -222,7 +236,7 @@ nav {
       background-color: #ff0000;
       display: block;
       position: absolute;
-      transition: 0.5s all ease; }
+      transition: 0.2s all ease; }
     .icon .ham:before {
       top: -8px; }
     .icon .ham:after {
@@ -288,14 +302,18 @@ nav ul li a:hover {
       border-top: 3px solid #fff; }
 
 @media screen and (max-width: 640px) {
+  .content .red-line {
+    width: 100px; }
+    .content .red-line:hover {
+      width: 200px; }
+
   .nav-last {
     color: #000;
     display: inline;
     width: 80%;
     height: 35px;
     margin-left: 40px;
-    background-color: white;
-    border-radius: 100%; }
+    background-color: transparent; }
     .nav-last i {
       display: block;
       padding: 8px 0 0 0;
@@ -315,29 +333,39 @@ nav ul li a:hover {
     float: right; }
 
   .header {
-    position: fixed;
-    margin-top: 1px;
-    margin-left: -20px; }
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: fixed; }
 
   .slide {
-    display: none; }
+    height: 4000px;
+    text-align: center; }
+    .slide #mainScroll {
+      display: none; }
 
   .redl {
     display: none; }
 
   .first {
     float: right;
-    width: 100%; }
+    width: 100%;
+    margin-top: 300px; }
 
   .second {
+    position: absolute;
     float: left;
-    width: 50%;
-    height: 50%; }
+    width: 100%;
+    height: 100%;
+    background: url("../images/fon2.png") no-repeat left top;
+    max-height: 600px;
+    background-size: contain;
+    background-attachment: scroll; }
 
   .gol-div {
-    background: url("../images/fon.png") no-repeat right top;
+    background: url("../images/fon.png") no-repeat left top;
     width: 100%;
-    max-height: 400px;
+    max-height: 300px;
     margin: auto;
     background-attachment: fixed;
     background-size: contain;
@@ -366,6 +394,7 @@ nav ul li a:hover {
     background: #ffffff;
     top: 100%;
     left: 0;
+    right: 0;
     width: 100%;
     opacity: 0;
     border-radius: 0px 0px 33px 34px;
@@ -395,28 +424,34 @@ nav ul li a:hover {
   .nav-last {
     color: #000;
     display: inline;
-    width: 90%;
-    height: 40px;
-    margin-left: 25px;
-    background-color: white;
-    border-radius: 100%; }
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    background-color: transparent;
+    height: 50px;
+    text-align: center; }
     .nav-last i {
-      display: block;
+      display: none;
       padding: 8px 0 0 0;
-      border-top: 3px solid #999;
+      border-top: 0px solid #999;
       width: 0;
       transition: all 0.3s;
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s; }
     .nav-last:hover {
-      color: #000; }
+      color: #ff3d00; }
       .nav-last:hover i {
-        width: 100%;
-        border-top: 3px solid #ff3d00; }
+        width: 80%;
+        border-top: 0px solid #ff3d00; }
 
   .header {
-    position: fixed;
-    width: 90%; }
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: fixed; }
 
   .redl {
     display: none; }
@@ -451,13 +486,13 @@ nav ul li a:hover {
     -webkit-border-radius: 0px 0px 33px 34px;
     border: 1px solid #000000;
     visibility: hidden;
-    transition: 0.5s all ease; }
+    transition: 0.5s all step-start; }
   nav ul li {
-    display: block; }
+    display: block;
+    margin: auto; }
     nav ul li a {
       font-size: 30px;
       width: 95%;
-      margin-right: 15px;
       float: left;
       display: inline-block;
       border: 0px solid #ff150c; }
