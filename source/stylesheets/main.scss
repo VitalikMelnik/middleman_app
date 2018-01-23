@@ -92,7 +92,7 @@ body {
     .red-line{
       height: 30px;
       border-top: $redmy solid 5px ;
-      width: 100px;
+      width: 110px;
       -webkit-transition: width 1s, -webkit-transform 1s; /* Safari */
       transition: width 1s,  transform 1s;
       &:hover{
