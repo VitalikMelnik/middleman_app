@@ -20,6 +20,8 @@ body {
   border: 0px;
 }
 .slide{
+  margin-top: -10px;
+  background-color: $bagcol;
   height: 4000px;
   text-align: center;
 }
@@ -29,19 +31,32 @@ body {
    height: 100%;
    margin: auto;
    background-attachment: fixed;
-   background-size: auto;
+   background-size: contain;
    background-color: $bagcol;
 }
 .first{
+  margin: 0;
   float: left;
-  width: 50%;
+  width: 100%;
   height: 100%;
   background-color: $bagcol;
   position: relative;
+  margin: 0px;
+  background: url("../images/fon2.png")  ;
+  background-size: contain;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
 }
 .second{
+  display: none;
   float: left;
-  width: 50%;
+  width: 55%;
   height: 100%;
   background: url("../images/fon2.png")  ;
   background-size: contain;
@@ -54,35 +69,25 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-.redl{
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  margin-left: 50%;
-  transition: width 0.5s linear;
-  transform-origin: top left;
-  transform-style: preserve-3D;
-  transform: rotate(45deg);
-  border-top: $redmy solid 8px;
-}
-.redl:hover{
-    width: 700px;
-}
+
 .content{
-  width: 50%;
+  width: 90%;
   position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
   top: 25%;
-  left: 25%;
+  vertical-align: middle;
   height: 130px;
     .num{
-      font-size: 60px;
-      color: #999999;
+      font-size: 100pt;
+      color: #e9e8e6;
 
     }
     .context-text{
-      font-size: 22px;
+      font-size: 28.1pt;
       margin: 0px;
-      margin-top:-20px;
+      margin-top:-50px;
     }
     .red-line{
       height: 30px;
@@ -120,13 +125,13 @@ body {
   left: 50%;
   width: 24px;
   height: 24px;
-  margin-left: -26px;
-  margin-top: 5px;
+  margin-left: -24px;
+  margin-top: 7px;
   border-left: 1px solid #fff;
   border-bottom: 1px solid #fff;
       .end-span{
-        margin-top: 8px;
-        margin-left: -22px;
+        margin-top: 7px;
+        margin-left: -20px;
         border-top: 1px solid #fff;
         border-left: 1px solid #fff;
         border-right: 0px solid #fff;
@@ -182,7 +187,7 @@ body {
 
 a {
   text-decoration: none;
-  font-size: 25px;
+  font-size: 17.1pt;
 }
 
 ul {
@@ -323,9 +328,10 @@ nav ul {
 
   li a {
     i {
+
       display: block;
-      padding: 8px 0 0 0;
-      border-top: 3px solid #999;
+      padding: 13px 0 0 0;
+      border-bottom: 4px solid $redmy;
       width: 0;
       transition: all 0.3s;
       -webkit-transition: all 0.3s;
@@ -334,8 +340,13 @@ nav ul {
     &:hover {
       color: #000;
       i {
-        width: 100%;
-        border-top: 3px solid $redmy;
+        left: 0;
+        right: 0;
+        margin:auto;
+
+        width: 80%;
+
+        border-bottom: 4px solid $redmy;
       }
     }
   }
@@ -344,12 +355,12 @@ nav ul {
   color: #fff;
   display: block;
   width: 100%;
-  height: 35px;
+  height: 38px;
   background-color: $redmy;
   i {
     display: block;
     padding: 8px 0 0 0;
-    border-top: 3px solid #999;
+    border-top: 3px solid $redmy;
     width: 0;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
@@ -357,163 +368,64 @@ nav ul {
   }
   &:hover {
     color: #000;
-    i {
-      width: 100%;
-      border-top: 3px solid #fff;
-    }
-  }
 
+  }
 
 }
 
-@media screen and (max-width: 640px) {
-
-.content{
-  .red-line{
-    width: 100px;
-      &:hover{
-        width: 200px;
-      }
+@media screen and (max-width: 1450px){
+  .demo{
+    margin-top: 120px;
+  }
+  .content{
+    margin-top: 0px;
   }
 }
 
-  .nav-last{
-    color: #000;
-    display: inline;
-    width: 80%;
-    height: 35px;
-    margin-left: 40px;
-    background-color: transparent;
-
-    i {
-      display: block;
-      padding: 8px 0 0 0;
-      border-top: 3px solid #999;
-      width: 0;
-      transition: all 0.3s;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-    }
-    &:hover {
-      color: #000;
-      i {
-        width: 100%;
-        border-top: 3px solid $redmy;
-      }
-    }
-
-
+@media screen and (max-width: 1040px){
+  .demo{
+      display: none;
   }
-  .icon {
-    display: block;
-    float: right;
+  .content{
+    margin-top: 80px;
   }
-  .header {
-    left: 0;
-    right: 0;
-    margin: auto;
-    position: fixed;
+}
 
-  }
-  .slide{
-    height: 4000px;
-    text-align: center;
-      #mainScroll{
-        display: none;
-      }
-  }
-
-  .redl{
+@media screen and (max-width: 800px) {
+  .demo{
     display: none;
   }
-  .first{
-    float: right;
-    width: 100%;
-    margin-top: 300px;
-  }
-
-  .second{
-      position: absolute;
-      float: left;
-      width: 100%;
-      height: 100%;
-      background: url("../images/fon2.png") no-repeat left top ;
-      max-height: 600px;
-      background-size: contain;
-      background-attachment: scroll;
+  .slide{
+    margin-top: -50px;
+    background-color: $bagcol;
   }
   .gol-div{
-    background: url("../images/fon.png") no-repeat left top ;
-
+    background: url("../images/fon.png") no-repeat right top ;
     width: 100%;
-    max-height: 300px;
+    height: 80%;
     margin: auto;
     background-attachment: fixed;
     background-size: contain;
     background-color: $bagcol;
   }
+  .first{
+    margin: 0;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: $bagcol;
+    position: relative;
+    margin: 0px;
+    background: url("../images/fon2.png") no-repeat ;
+    background-size: contain;
 
-  .img-icon{
 
-    width: 35px;
-    height: 50px;
-  }
-  .site-branding {
-    display: table-cell;
-    width: 20%;
-    vertical-align: middle;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
 
-    a {
-      font-size: 25px;
-      color: #000000;
-      margin-left: 50px;
-      margin-top: -35px;
-      text-transform: uppercase;
-    }
   }
 
-
-  nav ul {
-    &.menu {
-      -webkit-box-shadow: inset 0px 0px 209px -78px rgba(245,0,0,1);
-      -moz-box-shadow: inset 0px 0px 209px -78px rgba(245,0,0,1);
-      box-shadow: inset 0px 0px 209px -78px rgba(245,0,0,1);
-      position: absolute;
-      background: #ffffff;
-      top: 100%;
-      left: 0;
-      right: 0;
-      width: 100%;
-      opacity: 0;
-      border-radius: 0px 0px 33px 34px;
-      -moz-border-radius: 0px 0px 33px 34px;
-      -webkit-border-radius: 0px 0px 33px 34px;
-      border: 1px solid #000000;
-      visibility: hidden;
-      transition: 0.5s all ease;
-    }
-    li {
-      display: block;
-      a {
-        font-size: 30px;
-        width: 95%;
-        margin-right: 15px;
-        float: left;
-        display: inline-block;
-        border: 0px solid #ff150c;
-
-      }
-    }
-  }
-
-  #toggle:checked + .menu {
-    opacity: 2;
-    visibility: inherit;
-  }
-}
-
-
-@media screen and (max-width: 1020px) {
   .icon {
     display: block;
     float: right;
@@ -567,7 +479,7 @@ nav ul {
     width: 20%;
     vertical-align: middle;
     a {
-      font-size: 25px;
+      font-size: 17.1pt;
       color: #000000;
       margin-left: 50px;
       margin-top: -35px;
@@ -599,7 +511,7 @@ nav ul {
 
       a {
 
-        font-size: 30px;
+        font-size: 17.1pt;
         width: 95%;
 
         float: left;
@@ -614,3 +526,160 @@ nav ul {
     visibility: inherit;
   }
 }
+
+@media screen and (max-width: 690px) {
+  .slide{
+   margin: 0;
+  }
+
+  .content{
+
+    .red-line{
+      width: 100px;
+      &:hover{
+        width: 200px;
+      }
+    }
+  }
+
+  .nav-last{
+    color: #000;
+    display: inline;
+    width: 80%;
+    height: 35px;
+    margin-left: 40px;
+    background-color: transparent;
+
+    i {
+      display: block;
+      padding: 8px 0 0 0;
+      border-top: 3px solid #999;
+      width: 0;
+      transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+    }
+    &:hover {
+      color: #000;
+      i {
+        width: 100%;
+        border-top: 3px solid $redmy;
+      }
+    }
+
+
+  }
+  .icon {
+    display: block;
+    float: right;
+  }
+  .header {
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: fixed;
+
+  }
+  .slide{
+
+    height: 4000px;
+    text-align: center;
+    #mainScroll{
+      display: none;
+    }
+  }
+
+  .redl{
+    display: none;
+  }
+  .first{
+    float: right;
+    width: 100%;
+    min-height: 500px;
+
+  }
+
+  .second{
+    position: absolute;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: url("../images/fon2.png") no-repeat left top ;
+    max-height: 400px;
+    background-size: contain;
+    background-attachment: scroll;
+  }
+  .gol-div{
+    background: url("../images/fon.png") no-repeat left top ;
+    width: 100%;
+    max-height: 177px;
+    margin: auto;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-color: $bagcol;
+  }
+
+  .img-icon{
+
+    width: 35px;
+    height: 50px;
+  }
+  .site-branding {
+    display: table-cell;
+    width: 20%;
+    vertical-align: middle;
+
+    a {
+      font-size: 17.1pt;
+      color: #000000;
+      margin-left: 50px;
+      margin-top: -35px;
+      text-transform: uppercase;
+    }
+  }
+
+
+  nav ul {
+    &.menu {
+      -webkit-box-shadow: 0px 0px 274px -47px rgba(0,0,0,1);
+      -moz-box-shadow: 0px 0px 274px -47px rgba(0,0,0,1);
+      box-shadow: 0px 0px 274px -47px rgba(0,0,0,1);
+      position: absolute;
+      background: #ffffff;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+
+      border-radius: 0px 0px 33px 34px;
+      -moz-border-radius: 0px 0px 33px 34px;
+      -webkit-border-radius: 0px 0px 33px 34px;
+      border: 1px solid #000000;
+      visibility: hidden;
+      transition: 0.5s all step-start;
+    }
+    li {
+      display: block;
+      margin: auto;
+
+      a {
+
+        font-size: 17.1pt;
+        width: 95%;
+
+        float: left;
+        display: inline-block;
+        border: 0px solid #ff150c;
+
+      }
+    }
+  }
+
+  #toggle:checked + .menu {
+    opacity: 2;
+    visibility: inherit;
+  }
+}
+
+
+
